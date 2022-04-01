@@ -962,7 +962,7 @@
     (property "Reference" "R?" (id 0) (at 25.4 31.7499 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "" (id 1) (at 25.4 34.2899 0)
+    (property "Value" "DNP" (id 1) (at 25.4 34.2899 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "" (id 2) (at 22.86 33.02 0)
