@@ -414,18 +414,6 @@
     [
       "0ec69828-5ac7-41f7-b3fc-08d8266be7cb",
       ""
-    ],
-    [
-      "3d0f989a-bb57-4a18-96a8-623eef306ffb",
-      "24VDC Inputs"
-    ],
-    [
-      "d8aab4f8-c842-4685-ad6e-2f3e950ca948",
-      "24VDC Outputs"
-    ],
-    [
-      "1447aec0-0b06-4dd1-aa1f-436d643ade5e",
-      "Pi Pico MCU"
     ]
   ],
   "text_variables": {}
