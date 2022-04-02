@@ -21,5 +21,5 @@ Notes & ToDo List for the IO Board
 
 ### Misc
 - [ ] I2C addresses
-- [ ] Mounting holes
+- [x] Mounting holes
 - [ ] Board-to-Board Connector Pinout
