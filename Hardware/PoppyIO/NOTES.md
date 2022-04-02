@@ -13,7 +13,7 @@ Notes & ToDo List for the IO Board
 - [ ] Compatibility with inductive loads
 - [ ] Check driver capability of port-expander (LEDs + drivers)
 - [ ] Any usage for the additional driver ports?
-- [ ] ESD?
+- [ ] ESD safety
 
 ### Pico MCU
 - [x] Reset Button
@@ -21,3 +21,5 @@ Notes & ToDo List for the IO Board
 
 ### Misc
 - [ ] I2C addresses
+- [ ] Mounting holes
+- [ ] Board-to-Board Connector Pinout
