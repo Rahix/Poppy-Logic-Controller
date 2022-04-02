@@ -13,6 +13,7 @@ Notes & ToDo List for the IO Board
 - [ ] Compatibility with inductive loads
 - [ ] Check driver capability of port-expander (LEDs + drivers)
 - [ ] Any usage for the additional driver ports?
+- [ ] ESD?
 
 ### Pico MCU
 - [x] Reset Button
