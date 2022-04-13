@@ -1,3 +1,4 @@
 (sym_lib_table
   (lib (name "RPi_Pico")(type "KiCad")(uri "${KIPRJMOD}/../Libraries/MCU_RaspberryPi_and_Boards.kicad_sym")(options "")(descr ""))
+  (lib (name "PoppyLogicController")(type "KiCad")(uri "${KIPRJMOD}/../Libraries/PoppyLogicController.kicad_sym")(options "")(descr ""))
 )
