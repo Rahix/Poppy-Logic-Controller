@@ -10,7 +10,8 @@ Notes & ToDo List for the IO Board
   Limiting value (7V) is reached at 35V.
 - [x] Verify logic step-down:  Multiple 74VHC14 data-sheets mention that it can
   be used to step down to Vcc.
-- [ ] Defined initial state for inverters?
+- [x] Defined initial state for inverters?
+  - 680R pulls down to GND
 
 ### Outputs
 - [x] Indicator LEDs
@@ -19,10 +20,11 @@ Notes & ToDo List for the IO Board
 - [x] Compatibility with inductive loads
   - Compatible as long as 24V supply is connected (freewheeling diodes included
     in driver package).
-- [ ] Check drive capability of port-expander (LEDs + drivers)
+- [x] Check drive capability of port-expander (LEDs + drivers)
 - [x] ESD safety: ULN2003A has protection
-- [ ] ULN2003AD electrical compatibility
-- [ ] defined initial state for drivers?
+- [x] defined initial state for drivers?
+  - Added 10k pull-downs.
+- [ ] Must use a smaller polyfuse footprint
 
 ### Power Supply
 - [ ] Add 24V to 5/3.3V step down or power from 5V?
