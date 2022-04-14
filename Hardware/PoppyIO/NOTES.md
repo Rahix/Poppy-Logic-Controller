@@ -3,7 +3,7 @@ Notes & ToDo List for the IO Board
 
 ### Inputs
 - [x] Indicator LEDs
-- [ ] LED series resistor verification
+- [x] LED series resistor verification
 - [ ] ESD safety
 - [ ] Re-verify current and voltage
 - [ ] Verify limiting values
