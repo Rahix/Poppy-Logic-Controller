@@ -18,6 +18,7 @@ Notes & ToDo List for the IO Board
 
 ### Power Supply
 - [ ] Add 24V to 5/3.3V step down or power from 5V?
+- [ ] Screw-in terminals
 
 ### Pico MCU
 - [x] Reset Button
