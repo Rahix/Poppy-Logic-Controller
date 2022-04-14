@@ -5,22 +5,25 @@ Notes & ToDo List for the IO Board
 - [x] Indicator LEDs
 - [ ] LED series resistor verification
 - [ ] ESD safety
+- [ ] Re-verify current and voltage
 
 ### Outputs
 - [x] Indicator LEDs
 - [ ] LED series resistor verification
-- [x] Driver: ULQ2003A
+- [x] Driver: ULN2003A
 - [ ] Compatibility with inductive loads
 - [ ] Check driver capability of port-expander (LEDs + drivers)
-- [ ] Any usage for the additional driver ports?
 - [ ] ESD safety
 - [ ] ULN2003AD electrical compatibility
+
+### Power Supply
+- [ ] Add 24V to 5/3.3V step down or power from 5V?
 
 ### Pico MCU
 - [x] Reset Button
 - [ ] Additional IO?
 
 ### Misc
-- [ ] I2C addresses
+- [x] I2C addresses
 - [x] Mounting holes
 - [ ] Board-to-Board Connector Pinout
