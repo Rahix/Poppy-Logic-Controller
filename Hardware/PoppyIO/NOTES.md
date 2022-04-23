@@ -24,7 +24,7 @@ Notes & ToDo List for the IO Board
 - [x] ESD safety: ULN2003A has protection
 - [x] defined initial state for drivers?
   - Added 10k pull-downs.
-- [ ] Must use a smaller polyfuse footprint
+- [x] Must use a smaller polyfuse footprint
 
 ### Power Supply
 - [ ] Add 24V to 5/3.3V step down or power from 5V?
