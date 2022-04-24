@@ -27,7 +27,7 @@ Notes & ToDo List for the IO Board
 - [x] Must use a smaller polyfuse footprint
 
 ### Power Supply
-- [ ] Add 24V to 5/3.3V step down or power from 5V?
+- [x] Add 24V to 5/3.3V step down or power from 5V?
 - [x] Screw-in terminals: Using Phoenix screw terminals for power
 
 ### Pico MCU
