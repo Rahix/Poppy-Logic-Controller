@@ -7,8 +7,9 @@
   (paper "A4")
   (title_block
     (title "Poppy Logic Controller - IO Board")
-    (date "2022-04-24")
-    (rev "A")
+    (date "2022-04-25")
+    (rev "B")
+    (company "Rahix")
   )
 
   (layers
@@ -14834,7 +14835,7 @@
   (gr_arc (start 102 143) (mid 99.87868 142.12132) (end 99 140) (layer "Edge.Cuts") (width 0.1) (tstamp a7ce6e4b-0312-4247-9751-304a21882210))
   (gr_arc (start 201 140) (mid 200.12132 142.12132) (end 198 143) (layer "Edge.Cuts") (width 0.1) (tstamp ac745bdf-de65-4c0d-b900-20b7c8ce8585))
   (gr_line (start 99 60) (end 99 140) (layer "Edge.Cuts") (width 0.1) (tstamp acf69d57-5ab4-4976-b1d0-bce1ac045fdc))
-  (gr_text "Poppy Logic Controller - IO\nRev. A\n2022-04-24" (at 171.336 67.488) (layer "B.SilkS") (tstamp 69aad47c-cafd-4ed9-a984-5562c4a17916)
+  (gr_text "Poppy Logic Controller - IO\nRev. B\n2022-04-25" (at 171.336 67.488) (layer "B.SilkS") (tstamp 69aad47c-cafd-4ed9-a984-5562c4a17916)
     (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
   )
   (gr_text "Poppy Logic Controller - IO" (at 102.375 85.395 90) (layer "F.SilkS") (tstamp 01ede971-4a08-4eec-bfc4-196815418113)
@@ -14970,8 +14971,6 @@
     (style (thickness 0.15) (arrow_length 1.27) (text_position_mode 0) (extension_height 0.58642) (extension_offset 0.5) keep_text_aligned)
   )
 
-  (via (at 157.874 69.52) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (free) (net 0) (tstamp 0229b4d2-0b96-4ed0-b714-664d97b7b960))
-  (via (at 163.208 70.282) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (free) (net 0) (tstamp de0ba127-95b7-4152-a2bc-6fd503df0cdc))
   (segment (start 129.701977 75.637977) (end 129.68 75.616) (width 0.4) (layer "F.Cu") (net 1) (tstamp 0235901c-0d75-463a-9b94-6422a7f4e0a6))
   (segment (start 107.328 83.0825) (end 107.328 83.744) (width 0.4) (layer "F.Cu") (net 1) (tstamp 05e573ce-5de9-4f90-ac18-c3454de2bb75))
   (segment (start 109.36 113.525) (end 109.36 114.478) (width 0.4) (layer "F.Cu") (net 1) (tstamp 07ea0b2a-432a-4621-808c-808f68a39048))
@@ -15104,6 +15103,7 @@
   (segment (start 179.718 92.634) (end 179.718 97.46) (width 0.6) (layer "F.Cu") (net 1) (tstamp fc300def-74ef-4275-964e-05d70d2bc2fe))
   (segment (start 165.53 119.22) (end 166.934 119.22) (width 0.4) (layer "F.Cu") (net 1) (tstamp fd24c82e-8033-4725-99b1-932b5919f6ef))
   (via (at 132.22 79.68) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (free) (net 1) (tstamp 006dda61-5e82-40e6-8c29-f3d7c51a0138))
+  (via (at 157.874 69.52) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (free) (net 1) (tstamp 0229b4d2-0b96-4ed0-b714-664d97b7b960))
   (via (at 142.38 75.616) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net 1) (tstamp 0283051a-995f-4c73-b3ef-bf7c75c9f871))
   (via (at 150 98.476) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net 1) (tstamp 02ec4268-31ab-4ff2-91d5-cd2c082deca6))
   (via (at 167.78 104.2805) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net 1) (tstamp 0539f4c2-cb13-44db-8ab2-90e884d94dac))
@@ -15149,7 +15149,6 @@
   (via (at 134.76 98.476) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net 1) (tstamp 5da19065-3e3c-4dae-bbbd-b8eb055155b4))
   (via (at 171.59 137.592) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (free) (net 1) (tstamp 6084af1e-830a-48b8-b894-d35ca48aaa36))
   (via (at 111.878023 75.637977) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net 1) (tstamp 68ab5ae8-0b3d-45d4-9d10-e279b4382687))
-  (via (at 162.446 78.41) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (free) (net 1) (tstamp 6ba2f7c8-d1b7-4dbe-947c-a4be26daf4bf))
   (via (at 147.46 114.478) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net 1) (tstamp 6f8ce86e-0fe6-4451-9604-0c4e03988ea8))
   (via (at 124.6 75.616) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net 1) (tstamp 7006dc4b-c369-4308-8b02-72376abeab4c))
   (via (at 179.718 111.176) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (free) (net 1) (tstamp 772f7083-ad10-4288-944d-4e7c4f6eb4ce))
@@ -15200,6 +15199,7 @@
   (via (at 143.65 120.955) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (free) (net 1) (tstamp e140679c-f52d-4a4e-9760-203d2f252813))
   (via (at 144.92 119.685) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (free) (net 1) (tstamp e96dca5b-d006-45ea-a6d1-c8a238dd2e88))
   (via (at 165.24 125.4) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (free) (net 1) (tstamp eb6055a3-12cb-4e38-8e18-dcef14f8584f))
+  (via (at 163.208 70.282) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (free) (net 1) (tstamp ed2162d1-7ea5-4976-b565-9a1b0aac87fc))
   (via (at 191.91 83.236) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (free) (net 1) (tstamp eda4daea-d9a9-4872-ac4c-6426b2b00719))
   (via (at 152.54 114.478) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net 1) (tstamp ede1d76f-4aa0-4b57-8c7f-054948ed70b5))
   (via (at 129.68 75.616) (size 0.8) (drill 0.4) (layers "F.Cu" "B.Cu") (net 1) (tstamp ee4fa6b6-0ce5-447d-93ef-e6ef44e12b7e))

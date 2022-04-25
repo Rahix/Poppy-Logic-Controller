@@ -6,8 +6,9 @@
 
   (title_block
     (title "Poppy Logic Controller - IO Board")
-    (date "2022-04-24")
-    (rev "A")
+    (date "2022-04-25")
+    (rev "B")
+    (company "Rahix")
   )
 
   (lib_symbols
