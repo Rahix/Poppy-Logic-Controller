@@ -8,7 +8,7 @@
   (title_block
     (title "Poppy Logic Controller - IO Board")
     (date "2022-04-25")
-    (rev "B")
+    (rev "C")
     (company "Rahix")
   )
 
@@ -422,7 +422,7 @@
       (effects (font (size 1 1) (thickness 0.15)))
       (tstamp c33d94e7-9b0f-4bcf-bb95-e84ada8e3ddd)
     )
-    (fp_text value "680 250mW" (at 0 1.82 90) (layer "F.Fab") hide
+    (fp_text value "820 250mW" (at 0 1.82 90) (layer "F.Fab") hide
       (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 7828ff97-ade4-41ee-8132-ee0de841c643)
     )
@@ -1214,7 +1214,7 @@
       (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 40c55660-efb0-49fb-877e-c06e06d8690f)
     )
-    (fp_text value "680 250mW" (at 0 1.82 90) (layer "F.Fab") hide
+    (fp_text value "820 250mW" (at 0 1.82 90) (layer "F.Fab") hide
       (effects (font (size 1 1) (thickness 0.15)))
       (tstamp e8af72bf-6b24-4ef1-ac7d-dd54b70b291d)
     )
@@ -1988,7 +1988,7 @@
       (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 0b32adbb-337a-4c32-9946-454249038166)
     )
-    (fp_text value "680 250mW" (at 0 1.82 90) (layer "F.Fab") hide
+    (fp_text value "820 250mW" (at 0 1.82 90) (layer "F.Fab") hide
       (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 75d6a0b3-8321-4e23-b799-a0a0d4d892f0)
     )
@@ -2074,7 +2074,7 @@
       (effects (font (size 1 1) (thickness 0.15)))
       (tstamp e008ea86-76b5-4459-a6c2-7f73e1dcd195)
     )
-    (fp_text value "680 250mW" (at 0 1.82 90) (layer "F.Fab") hide
+    (fp_text value "820 250mW" (at 0 1.82 90) (layer "F.Fab") hide
       (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 3c5675cb-6b07-4063-9db4-9c6e600cf616)
     )
@@ -2273,7 +2273,7 @@
       (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 2c5cc0b9-4512-4ede-b56c-ebba81884c8a)
     )
-    (fp_text value "680 250mW" (at 0 1.82 90) (layer "F.Fab") hide
+    (fp_text value "820 250mW" (at 0 1.82 90) (layer "F.Fab") hide
       (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 75856c36-2982-4f3e-95ee-95d2387af414)
     )
@@ -2486,7 +2486,7 @@
       (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 4f973d93-5553-4bde-bc9c-5d50c0ff184c)
     )
-    (fp_text value "680 250mW" (at 0 1.82 90) (layer "F.Fab") hide
+    (fp_text value "820 250mW" (at 0 1.82 90) (layer "F.Fab") hide
       (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 322c0282-73c9-4053-936d-3bb96e86b07a)
     )
@@ -3060,7 +3060,7 @@
     (tags "SOIC SO")
     (property "Sheetfile" "PoppyIO.kicad_sch")
     (property "Sheetname" "")
-    (path "/ea1d4343-3677-4868-a8a1-aa32f28b27a3")
+    (path "/c9230ade-e5a2-402f-90bd-99d90238a663")
     (attr smd)
     (fp_text reference "U10" (at 0 0 180) (layer "F.SilkS")
       (effects (font (size 1 1) (thickness 0.15)))
@@ -4035,7 +4035,7 @@
       (effects (font (size 1 1) (thickness 0.15)))
       (tstamp b4415ad2-0db3-4ff8-a4f0-7557b25d9c0c)
     )
-    (fp_text value "680 250mW" (at 0 1.82 90) (layer "F.Fab") hide
+    (fp_text value "820 250mW" (at 0 1.82 90) (layer "F.Fab") hide
       (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 0a5b5502-e1c8-4b96-9b2c-44916295b279)
     )
@@ -4454,7 +4454,7 @@
     (tags "SOIC SO")
     (property "Sheetfile" "PoppyIO.kicad_sch")
     (property "Sheetname" "")
-    (path "/bf2190c2-9ea0-4636-ab6f-2d8de2744dd3")
+    (path "/f04a2188-c1f4-4e23-8c51-27c74910fc9c")
     (attr smd)
     (fp_text reference "U9" (at 0 0 180) (layer "F.SilkS")
       (effects (font (size 1 1) (thickness 0.15)))
@@ -4896,7 +4896,7 @@
     (tags "SOIC SO")
     (property "Sheetfile" "PoppyIO.kicad_sch")
     (property "Sheetname" "")
-    (path "/da598607-75fa-42f0-9bc1-b1827d4a456e")
+    (path "/7b532ef2-f1c9-4f70-853e-f7bfb5a3a1c1")
     (attr smd)
     (fp_text reference "U11" (at 0 0 180) (layer "F.SilkS")
       (effects (font (size 1 1) (thickness 0.15)))
@@ -5817,7 +5817,7 @@
       (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 1a0ee04b-ea79-44ef-95d4-ab1eae3d6d8c)
     )
-    (fp_text value "680 250mW" (at 0 1.82 90) (layer "F.Fab") hide
+    (fp_text value "820 250mW" (at 0 1.82 90) (layer "F.Fab") hide
       (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 2aa0d5b3-469e-4c7e-ba92-a617d6a029ce)
     )
@@ -6016,7 +6016,7 @@
       (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 46f4b485-5361-4dd2-a271-159da7441282)
     )
-    (fp_text value "680 250mW" (at 0 1.82 90) (layer "F.Fab") hide
+    (fp_text value "820 250mW" (at 0 1.82 90) (layer "F.Fab") hide
       (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 9be830e9-5094-4a5b-ac1f-e55824dca1c6)
     )
@@ -6550,7 +6550,7 @@
     (tags "SOIC SO")
     (property "Sheetfile" "PoppyIO.kicad_sch")
     (property "Sheetname" "")
-    (path "/61ed92c7-bcea-45a6-94a7-2b2e4c8e7a90")
+    (path "/e540cb7b-623e-4da4-860a-d7283eb5bcef")
     (attr smd)
     (fp_text reference "U12" (at 0 0 180) (layer "F.SilkS")
       (effects (font (size 1 1) (thickness 0.15)))
@@ -7426,7 +7426,7 @@
       (effects (font (size 1 1) (thickness 0.15)))
       (tstamp ddf16af5-bc19-4161-b361-42fdf4fdb037)
     )
-    (fp_text value "680 250mW" (at 0 1.82 90) (layer "F.Fab") hide
+    (fp_text value "820 250mW" (at 0 1.82 90) (layer "F.Fab") hide
       (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 4b1e3bee-bf5a-4343-a580-85a6e9e522b4)
     )
@@ -7635,7 +7635,7 @@
       (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 6a1920e0-7654-493e-a19f-8fd9b47b4178)
     )
-    (fp_text value "680 250mW" (at 0 1.82 90) (layer "F.Fab") hide
+    (fp_text value "820 250mW" (at 0 1.82 90) (layer "F.Fab") hide
       (effects (font (size 1 1) (thickness 0.15)))
       (tstamp e42a3840-272b-4f15-aab0-28379a52b78e)
     )
@@ -8207,7 +8207,7 @@
       (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 5a7c08c6-cfe8-4bba-9b27-a13e3c38e6c9)
     )
-    (fp_text value "680 250mW" (at 0 1.82 90) (layer "F.Fab") hide
+    (fp_text value "820 250mW" (at 0 1.82 90) (layer "F.Fab") hide
       (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 2d452687-ed0a-4991-9684-622f1fb174a7)
     )
@@ -9342,7 +9342,7 @@
       (effects (font (size 1 1) (thickness 0.15)))
       (tstamp a0002350-1623-41eb-8ead-8a253668bf98)
     )
-    (fp_text value "680 250mW" (at 0 1.82 90) (layer "F.Fab") hide
+    (fp_text value "820 250mW" (at 0 1.82 90) (layer "F.Fab") hide
       (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 6387dd81-a058-4d97-b926-5fb304af3167)
     )
@@ -9479,7 +9479,7 @@
       (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 6a43bec6-89cb-442e-b223-61b377295e7e)
     )
-    (fp_text value "680 250mW" (at 0 1.82 90) (layer "F.Fab") hide
+    (fp_text value "820 250mW" (at 0 1.82 90) (layer "F.Fab") hide
       (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 9ec3ddeb-7343-4220-b5c0-6a84bb67dfdb)
     )
@@ -9958,7 +9958,7 @@
       (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 8a14f7da-3231-4f58-9740-0d4b67ba0cbf)
     )
-    (fp_text value "680 250mW" (at 0.508 -1.524 180) (layer "F.Fab")
+    (fp_text value "820 250mW" (at 0.508 -1.524 180) (layer "F.Fab")
       (effects (font (size 1 1) (thickness 0.15)) (justify right))
       (tstamp 9cbcf51a-7667-40db-84d9-4d99e192f37c)
     )
@@ -10289,7 +10289,7 @@
       (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 8b578a8d-cc7c-4cf5-a0dd-a6453b257693)
     )
-    (fp_text value "680 250mW" (at 0 1.82 90) (layer "F.Fab") hide
+    (fp_text value "820 250mW" (at 0 1.82 90) (layer "F.Fab") hide
       (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 3cea91c0-44f4-4ca4-93ee-788302267336)
     )
