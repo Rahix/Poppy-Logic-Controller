@@ -12388,10 +12388,10 @@
     (property "Reference" "J10" (id 0) (at 78.74 22.8599 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "Screw_Terminal_01x02" (id 1) (at 78.74 25.3999 0)
+    (property "Value" "MKDS-1,5-2-5.08" (id 1) (at 78.74 25.3999 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MPT-0,5-4-2.54_1x04_P2.54mm_Horizontal" (id 2) (at 76.2 22.86 0)
+    (property "Footprint" "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal" (id 2) (at 76.2 22.86 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 76.2 22.86 0)
@@ -15125,7 +15125,7 @@
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid f8c96be1-70b9-4023-b323-701f7eafdbb2)
     (property "Reference" "SW1" (id 0) (at 392.43 157.48 0))
-    (property "Value" "PTS645SH43SMTR92LFS" (id 1) (at 392.43 160.02 0))
+    (property "Value" "PTS645" (id 1) (at 392.43 160.02 0))
     (property "Footprint" "Button_Switch_SMD:SW_SPST_PTS645" (id 2) (at 392.43 160.02 0)
       (effects (font (size 1.27 1.27)) hide)
     )
@@ -16112,7 +16112,7 @@
       (reference "J8") (unit 1) (value "WAGO 233-504") (footprint "PoppyLogicController:WAGO_233-204")
     )
     (path "/ac89226c-b873-4964-b60c-6cd96dcd0ab9"
-      (reference "J10") (unit 1) (value "Screw_Terminal_01x02") (footprint "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MPT-0,5-4-2.54_1x04_P2.54mm_Horizontal")
+      (reference "J10") (unit 1) (value "MKDS-1,5-2-5.08") (footprint "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal")
     )
     (path "/3e4be841-f567-4772-9110-1e60f784b0c4"
       (reference "J11") (unit 1) (value "TC2030-IDC") (footprint "Connector:Tag-Connect_TC2030-IDC-FP_2x03_P1.27mm_Vertical")
@@ -16421,7 +16421,7 @@
       (reference "R89") (unit 1) (value "10k") (footprint "Resistor_SMD:R_0603_1608Metric")
     )
     (path "/f8c96be1-70b9-4023-b323-701f7eafdbb2"
-      (reference "SW1") (unit 1) (value "PTS645SH43SMTR92LFS") (footprint "Button_Switch_SMD:SW_SPST_PTS645")
+      (reference "SW1") (unit 1) (value "PTS645") (footprint "Button_Switch_SMD:SW_SPST_PTS645")
     )
     (path "/7101c69b-dd19-4bf1-bb0a-108aa3dc9beb"
       (reference "SYM1") (unit 1) (value "SYM_Rahix") (footprint "PoppyLogicController:SYM_Rahix")
