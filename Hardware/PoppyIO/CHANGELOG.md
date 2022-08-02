@@ -1,4 +1,4 @@
-## UNRELEASED
+## Revision D - 2022-08-02
 - Drop _DNP_ note from LM78xx regulator and its capacitors.  The regulator is
   used to step-down the 24V input to 5V for the Raspberry Pi Pico.  Not using
   the regulator means a separate 5V supply is needed which is pretty pointless.

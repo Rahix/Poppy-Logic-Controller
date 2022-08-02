@@ -7,8 +7,8 @@
   (paper "A4")
   (title_block
     (title "Poppy Logic Controller - IO Board")
-    (date "2022-04-25")
-    (rev "Unreleased")
+    (date "2022-08-02")
+    (rev "D")
     (company "Rahix")
   )
 
@@ -14861,7 +14861,7 @@
   (gr_arc (start 102 143) (mid 99.87868 142.12132) (end 99 140) (layer "Edge.Cuts") (width 0.1) (tstamp a7ce6e4b-0312-4247-9751-304a21882210))
   (gr_arc (start 201 140) (mid 200.12132 142.12132) (end 198 143) (layer "Edge.Cuts") (width 0.1) (tstamp ac745bdf-de65-4c0d-b900-20b7c8ce8585))
   (gr_line (start 99 60) (end 99 140) (layer "Edge.Cuts") (width 0.1) (tstamp acf69d57-5ab4-4976-b1d0-bce1ac045fdc))
-  (gr_text "Poppy Logic Controller - IO\nRev. Unreleased\n2022-04-25" (at 171.336 67.488) (layer "B.SilkS") (tstamp 69aad47c-cafd-4ed9-a984-5562c4a17916)
+  (gr_text "Poppy Logic Controller - IO\nRev. D\n2022-08-02" (at 171.336 67.488) (layer "B.SilkS") (tstamp 69aad47c-cafd-4ed9-a984-5562c4a17916)
     (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
   )
   (gr_text "Poppy Logic Controller - IO" (at 102.375 85.395 90) (layer "F.SilkS") (tstamp 01ede971-4a08-4eec-bfc4-196815418113)

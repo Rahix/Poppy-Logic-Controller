@@ -6,9 +6,13 @@
 
   (title_block
     (title "Poppy Logic Controller - IO Board")
-    (date "2022-06-26")
-    (rev "Unreleased")
+    (date "2022-08-02")
+    (rev "D")
     (company "Rahix")
+    (comment 1 "- Either uses an onboard Pi-Pico or can be controlled via external connector.")
+    (comment 2 "- 16 sinking outputs (24VDC)")
+    (comment 3 "- 16 sinking inputs (24VDC)")
+    (comment 4 "This board has:")
   )
 
   (lib_symbols
