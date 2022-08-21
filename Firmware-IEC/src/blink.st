@@ -1,18 +1,20 @@
-FUNCTION_BLOCK BLINK
+(* A blinker which can be used to make indicator lights blink. *)
+
+FUNCTION_BLOCK FB_Blink
     VAR_INPUT
-        ON_TIME: TIME;
-        OFF_TIME: TIME;
+        tOnDelay:   TIME;
+        tOffDelay:  TIME;
     END_VAR
     VAR_OUTPUT
-        Q: BOOL := FALSE;
+        Q:          BOOL := FALSE;
     END_VAR
     VAR
-        TMR_ON: TON;
-        TMR_OFF: TON;
+        tmrOn:      TON;
+        tmrOff:     TON;
     END_VAR
 
-    TMR_ON(IN := Q, PT := ON_TIME);
-    TMR_OFF(IN := NOT Q, PT := OFF_TIME);
+    tmrOn(IN := Q, PT := tOnDelay);
+    tmrOff(IN := NOT Q, PT := tOffDelay);
 
-    Q := TMR_OFF.Q AND NOT TMR_ON.Q;
+    Q := tmrOff.Q AND NOT tmrOn.Q;
 END_FUNCTION_BLOCK

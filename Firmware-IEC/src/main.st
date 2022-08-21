@@ -1,39 +1,60 @@
+(*
+ * Sample Program
+ * ==============
+ * This program demos a simple start-stop circuit where the start and stop
+ * buttens have to be held for 0.8s before the operation is performed.  While a
+ * button is pressed, an indicator blinks to give immediate feedback.
+ *)
+
 {#include "blink.st"}
 
-PROGRAM prog
-    VAR (* inputs *)
-        btn_start               AT %IX08: BOOL;
-        btn_stop                AT %IX09: BOOL;
+PROGRAM MAIN
+    VAR (* Inputs *)
+        xBtnStart           AT %IX08:   BOOL;
+        xBtnStop            AT %IX09:   BOOL;
     END_VAR
-    VAR (* outputs *)
-        led_orange              AT %QX08: BOOL;
-        led_green               AT %QX09: BOOL;
+    VAR (* Outputs *)
+        xIndicatorOrange    AT %QX08:   BOOL := FALSE;
+        xIndicatorGreen     AT %QX09:   BOOL := FALSE;
+
+        xMotor              AT %QX00:   BOOL := FALSE;
     END_VAR
-    VAR (* variables *)
-        running: BOOL;
-        tmr_start: TON;
-        tmr_stop: TON;
-        blinker: BLINK;
+    VAR (* Variables *)
+        xRunning:                       BOOL;
+        xWaiting:                       BOOL;
+        tmrStart:                       TON;
+        tmrStop:                        TON;
+        fbBlink:                        FB_Blink;
     END_VAR
     VAR_TEMP
-        waiting: BOOL;
+        xWaitingStart:                  BOOL;
+        xWaitingStop:                   BOOL;
     END_VAR
 
-    blinker(on_time := t#300ms, off_time := t#300ms);
-    tmr_start(in := btn_start, pt := t#1000ms);
-    tmr_stop(in := btn_stop, pt := t#1000ms);
+    fbBlink(tOnDelay := t#300ms, tOffDelay := t#300ms);
+    tmrStart(IN := xBtnStart, PT := t#800ms);
+    tmrStop(IN := xBtnStop, PT := t#800ms);
 
-    running := (tmr_start.q OR running) AND NOT tmr_stop.q;
-    waiting := (not running and tmr_start.et <> t#0s)
-            OR (running and tmr_stop.et <> t#0s);
+    xWaitingStart := tmrStart.IN AND NOT tmrStart.Q;
+    xWaitingStop := tmrStop.IN AND NOT tmrStop.Q;
+    xWaiting := xWaitingStart OR xWaitingStop;
 
-    led_green := running;
-    led_orange := waiting AND blinker.q;
+    xRunning := (tmrStart.Q OR xRunning) AND NOT tmrStop.Q;
+
+    xMotor := xRunning;
+
+    xIndicatorGreen := xRunning;
+    xIndicatorOrange := xWaiting AND fbBlink.Q;
 END_PROGRAM
 
-CONFIGURATION std_conf
-    RESOURCE std_resource on plc
-        TASK task_main(interval := T#10ms, priority := 0);
-        PROGRAM inst0 with task_main : prog;
+(*
+ * It is important to keep this configuration named `STD_CONF` and the resource
+ * named `STD_RESOURCE`.  Everything else can be modified. For example, you can
+ * add new tasks or change the interval here.
+ *)
+CONFIGURATION STD_CONF
+    RESOURCE STD_RESOURCE ON POPPY_LOGIC_CONTROLLER
+        TASK taskMain(INTERVAL := T#50ms, PRIORITY := 0);
+        PROGRAM INST0 WITH taskMain : MAIN;
     END_RESOURCE
 END_CONFIGURATION

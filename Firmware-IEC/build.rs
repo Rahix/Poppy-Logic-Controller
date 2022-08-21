@@ -89,8 +89,8 @@ fn build_iec_program(matiec_dir: &Path, iec_build_dir: &Path) {
         .success());
 
     cc::Build::new()
-        .file(iec_build_dir.join("std_conf.c"))
-        .file(iec_build_dir.join("std_resource.c"))
+        .file(iec_build_dir.join("STD_CONF.c"))
+        .file(iec_build_dir.join("STD_RESOURCE.c"))
         .include(matiec_dir.join("lib").join("C"))
         .warnings(false)
         .opt_level(0)
