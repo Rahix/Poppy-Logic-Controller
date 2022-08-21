@@ -1,34 +1,39 @@
+{#include "blink.st"}
+
 PROGRAM prog
     VAR (* inputs *)
-        btn_start               AT %I0.8: BOOL;
-        btn_stop                AT %I0.9: BOOL;
+        btn_start               AT %IX08: BOOL;
+        btn_stop                AT %IX09: BOOL;
     END_VAR
     VAR (* outputs *)
-        led_orange              AT %Q0.8: BOOL;
-        led_green               AT %Q0.9: BOOL;
-
-        coil_cylinder           AT %Q0.0: BOOL;
+        led_orange              AT %QX08: BOOL;
+        led_green               AT %QX09: BOOL;
     END_VAR
     VAR (* variables *)
         running: BOOL;
         tmr_start: TON;
         tmr_stop: TON;
+        blinker: BLINK;
+    END_VAR
+    VAR_TEMP
+        waiting: BOOL;
     END_VAR
 
-    tmr_start(in := btn_start, pt := t#10ms);
-    tmr_stop(in := btn_stop, pt := t#10ms);
+    blinker(on_time := t#300ms, off_time := t#300ms);
+    tmr_start(in := btn_start, pt := t#1000ms);
+    tmr_stop(in := btn_stop, pt := t#1000ms);
 
     running := (tmr_start.q OR running) AND NOT tmr_stop.q;
+    waiting := (not running and tmr_start.et <> t#0s)
+            OR (running and tmr_stop.et <> t#0s);
 
     led_green := running;
-    led_orange := tmr_start.et <> t#0s OR tmr_stop.et <> t#0s;
-
-    coil_cylinder := running;
+    led_orange := waiting AND blinker.q;
 END_PROGRAM
 
 CONFIGURATION std_conf
     RESOURCE std_resource on plc
-        TASK task_main(interval := T#50ms, priority := 0);
+        TASK task_main(interval := T#10ms, priority := 0);
         PROGRAM inst0 with task_main : prog;
     END_RESOURCE
 END_CONFIGURATION

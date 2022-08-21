@@ -1,0 +1,18 @@
+FUNCTION_BLOCK BLINK
+    VAR_INPUT
+        ON_TIME: TIME;
+        OFF_TIME: TIME;
+    END_VAR
+    VAR_OUTPUT
+        Q: BOOL := FALSE;
+    END_VAR
+    VAR
+        TMR_ON: TON;
+        TMR_OFF: TON;
+    END_VAR
+
+    TMR_ON(IN := Q, PT := ON_TIME);
+    TMR_OFF(IN := NOT Q, PT := OFF_TIME);
+
+    Q := TMR_OFF.Q AND NOT TMR_ON.Q;
+END_FUNCTION_BLOCK
