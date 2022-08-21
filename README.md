@@ -69,10 +69,13 @@ for details of the differences.
 
 #### Programming It
 This repository contains a bare-bones firmware in Rust and MicroPython to get
-started.  Check their READMEs for more info on that:
+started.  Or, if you have a background in automation, you can program the Poppy
+Logic Controller in _ST_ (_Structured Text_) using the IEC 61131-3 firmware.
+Check the READMEs for more info on that:
 
 - [Firmware-Rust](./Firmware-Rust/)
 - [Firmware-MicroPython](./Firmware-MicroPython/)
+- [Firmware-IEC](./Firmware-IEC/)
 
 #### Not using the Pico
 If you need a different microcontroller, you can drop the Raspberry Pi Pico and
