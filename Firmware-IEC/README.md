@@ -55,5 +55,77 @@ inputs and 16 outputs:
 
 Byte-access or word-access to these tags is not possible.
 
+### Modbus
+This firmware also comes with a [Modbus RTU] interface for interaction with
+other devices.  The interface is available over USB, where the Poppy Logic
+Controller will announce itself as a serial port.
+
+A few registers are mapped to Modbus for communication:
+
+- Modbus Coils 0 - 15 of unit 1 are mapped to `%MX00` - `%MX15`.
+- Modbus Holding Registers 0 - 15 of unit 1 are mapped to `%MW00` - `%MW15`.
+  Holding registers are 16 bits wide.
+
+Additionally, the state of all inputs and outputs is available _read-only_
+through Modbus discrete inputs:
+
+- Inputs `%IX00` - `%IX15` are mapped to discrete inputs 0 - 15.
+- Outputs `%QX00` - `%QX15` are mapped to discrete inputs 16 - 31.
+
+(This may be useful for visualization purposes).
+
+As a quick example, using the [pymodbus REPL] you can set coils or dump the
+state of inputs and outputs:
+
+```console
+$ pymodbus.console serial --port /dev/ttyACM0
+
+> # Set a coil
+> client.write_coil unit=1 address=0 value=1
+> # And reset it again
+> client.write_coil unit=1 address=0 value=0
+
+> # Or dump all physical inputs and outputs
+> client.read_discrete_inputs unit=1 address=0 count=32
+{
+    "bits": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+    ]
+}
+```
+
 [matiec]: https://github.com/beremiz/matiec
 [main.st]: src/main.st
+[Modbus RTU]: https://en.wikipedia.org/wiki/Modbus
+[pymodbus REPL]: https://pymodbus.readthedocs.io/en/latest/source/library/REPL.html
