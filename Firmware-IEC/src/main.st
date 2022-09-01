@@ -12,6 +12,10 @@ PROGRAM MAIN
     VAR (* Inputs *)
         xBtnStart           AT %IX08:   BOOL;
         xBtnStop            AT %IX09:   BOOL;
+
+        (* Can be controlled via modbus coils 0 and 1 *)
+        xBtnStartModbus     AT %MX00:   BOOL;
+        xBtnStopModbus      AT %MX01:   BOOL;
     END_VAR
     VAR (* Outputs *)
         xIndicatorOrange    AT %QX08:   BOOL := FALSE;
@@ -32,8 +36,8 @@ PROGRAM MAIN
     END_VAR
 
     fbBlink(tOnDelay := t#300ms, tOffDelay := t#300ms);
-    tmrStart(IN := xBtnStart, PT := t#800ms);
-    tmrStop(IN := xBtnStop, PT := t#800ms);
+    tmrStart(IN := xBtnStart OR xBtnStartModbus, PT := t#800ms);
+    tmrStop(IN := xBtnStop OR xBtnStopModbus, PT := t#800ms);
 
     xWaitingStart := tmrStart.IN AND NOT tmrStart.Q;
     xWaitingStop := tmrStop.IN AND NOT tmrStop.Q;
