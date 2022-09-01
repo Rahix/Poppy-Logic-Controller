@@ -9,6 +9,8 @@ use embedded_time::rate::*;
 use rp_pico::hal;
 use rp_pico::hal::pac;
 
+use rmodbus::server::context::ModbusContext;
+
 use embedded_hal::digital::v2::OutputPin as _;
 use hal::Clock as _;
 
@@ -17,6 +19,8 @@ mod matiec;
 #[cortex_m_rt::entry]
 fn main() -> ! {
     rtt_target::rtt_init_print!();
+
+    rprintln!("Hello Poppy Logic!");
 
     let mut pac = pac::Peripherals::take().unwrap();
     let core = pac::CorePeripherals::take().unwrap();
@@ -103,9 +107,29 @@ fn main() -> ! {
 
     let mut led = pins.led.into_push_pull_output();
 
+    let mut modbus_context = cortex_m::singleton!(:ModbusContext = ModbusContext::new()).unwrap();
+
     let mut iec_config = matiec::IecConfiguration::new().unwrap();
 
     led.set_high().unwrap();
+
+    let usb_bus = usb_device::bus::UsbBusAllocator::new(hal::usb::UsbBus::new(
+        pac.USBCTRL_REGS,
+        pac.USBCTRL_DPRAM,
+        clocks.usb_clock,
+        true,
+        &mut pac.RESETS,
+    ));
+
+    let mut serial_port = usbd_serial::SerialPort::new(&usb_bus);
+
+    let usb_id = usb_device::device::UsbVidPid(0xde5f, 0x3d21);
+    let mut usb_dev = usb_device::device::UsbDeviceBuilder::new(&usb_bus, usb_id)
+        .manufacturer("Rahix")
+        .product("Poppy Logic Controller")
+        .serial_number("POPPY123")
+        .device_class(2)
+        .build();
 
     loop {
         // Reading all inputs
@@ -158,6 +182,42 @@ fn main() -> ! {
 
         // Wait for next tick
         let _ = led.set_state(((usecs / 1000000) % 2 == 0).into());
-        delay.delay_us(iec_config.common_ticktime_us().try_into().unwrap());
+        let ticktime: u64 = iec_config.common_ticktime_us().try_into().unwrap();
+        let wakeup = usecs + ticktime;
+
+        // While waiting for the next PLC tick, handle USB
+        while wakeup > timer.get_counter() {
+            if usb_dev.poll(&mut [&mut serial_port]) {
+                let mut request_buf = [0x00u8; 256];
+                if let Ok(b) = serial_port.read(&mut request_buf) {
+                    rprintln!("Message: {:?}", &request_buf[..b]);
+                    let mut response = heapless::Vec::<u8, 256>::new();
+                    let mut frame = rmodbus::server::ModbusFrame::new(
+                        1,
+                        &request_buf,
+                        rmodbus::ModbusProto::Rtu,
+                        &mut response,
+                    );
+                    if let Err(e) = frame.parse() {
+                        rprintln!("Modbus Error: {}", e);
+                    } else {
+                        if frame.processing_required {
+                            let res = match frame.readonly {
+                                true => frame.process_read(&modbus_context),
+                                false => frame.process_write(&mut modbus_context),
+                            };
+                            if let Err(e) = res {
+                                rprintln!("Modbus Processing Error: {}", e);
+                            } else {
+                                if frame.response_required {
+                                    frame.finalize_response().unwrap();
+                                    serial_port.write(&response).unwrap();
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
