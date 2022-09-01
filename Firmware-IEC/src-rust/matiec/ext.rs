@@ -18,15 +18,15 @@ pub static mut CURRENT_TIME: IecTimespec = IecTimespec {
 };
 
 macro_rules! io_tags_def {
-    ($N:expr, $($IO:ident,)*) => {
+    ($N:expr, $Ty:ty, $($IO:ident,)*) => {
         paste::paste! {
             $(
                 #[export_name = concat!("__", stringify!($IO))]
-                static mut [<$IO _ADDR>]: *const u8 = unsafe { &$IO };
-                pub static mut $IO: u8 = 0;
+                static mut [<$IO _ADDR>]: *const $Ty = unsafe { &$IO };
+                pub static mut $IO: $Ty = 0;
             )*
 
-            pub unsafe fn all_mut<'a>() -> [&'a mut u8; $N] {
+            pub unsafe fn all_mut<'a>() -> [&'a mut $Ty; $N] {
                 [
                     $(&mut $IO,)*
                 ]
@@ -37,7 +37,7 @@ macro_rules! io_tags_def {
 
 pub mod inputs {
     io_tags_def! {
-        16,
+        16, u8,
         IX00, IX01, IX02, IX03, IX04, IX05, IX06, IX07,
         IX08, IX09, IX10, IX11, IX12, IX13, IX14, IX15,
     }
@@ -45,8 +45,24 @@ pub mod inputs {
 
 pub mod outputs {
     io_tags_def! {
-        16,
+        16, u8,
         QX00, QX01, QX02, QX03, QX04, QX05, QX06, QX07,
         QX08, QX09, QX10, QX11, QX12, QX13, QX14, QX15,
+    }
+}
+
+pub mod mem_bits {
+    io_tags_def! {
+        16, u8,
+        MX00, MX01, MX02, MX03, MX04, MX05, MX06, MX07,
+        MX08, MX09, MX10, MX11, MX12, MX13, MX14, MX15,
+    }
+}
+
+pub mod mem_words {
+    io_tags_def! {
+        16, u16,
+        MW00, MW01, MW02, MW03, MW04, MW05, MW06, MW07,
+        MW08, MW09, MW10, MW11, MW12, MW13, MW14, MW15,
     }
 }

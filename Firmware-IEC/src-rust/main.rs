@@ -132,6 +132,9 @@ fn main() -> ! {
         .build();
 
     loop {
+        // Read potential changes from modbus
+        iec_config.sync_from_modbus(&modbus_context);
+
         // Reading all inputs
         let pins0 = [&_i00, &_i01, &_i02, &_i03, &_i04, &_i05, &_i06, &_i07];
         let pins1 = [&_i08, &_i09, &_i10, &_i11, &_i12, &_i13, &_i14, &_i15];
@@ -179,6 +182,9 @@ fn main() -> ! {
                 e
             );
         });
+
+        // Write potential changes to modbus
+        iec_config.sync_to_modbus(&mut modbus_context);
 
         // Wait for next tick
         let _ = led.set_state(((usecs / 1000000) % 2 == 0).into());

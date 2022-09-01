@@ -85,4 +85,35 @@ impl IecConfiguration {
             *v = *o != 0x00;
         }
     }
+
+    pub fn sync_to_modbus(&mut self, ctx: &mut rmodbus::server::context::ModbusContext) {
+        let mem_bits_mut = unsafe { ext::mem_bits::all_mut() };
+        for (plc_bit, modbus_bit) in mem_bits_mut.into_iter().zip(ctx.coils.iter_mut()) {
+            *modbus_bit = *plc_bit != 0x00;
+        }
+        let mem_words_mut = unsafe { ext::mem_words::all_mut() };
+        for (plc_word, modbus_word) in mem_words_mut.into_iter().zip(ctx.holdings.iter_mut()) {
+            *modbus_word = *plc_word;
+        }
+        // also synchronize inputs and outputs to discretes
+        let inputs_mut = unsafe { ext::inputs::all_mut() };
+        for (plc_bit, modbus_bit) in inputs_mut.into_iter().zip(ctx.discretes.iter_mut().take(16)) {
+            *modbus_bit = *plc_bit != 0x00;
+        }
+        let outputs_mut = unsafe { ext::outputs::all_mut() };
+        for (plc_bit, modbus_bit) in outputs_mut.into_iter().zip(ctx.discretes.iter_mut().skip(16).take(16)) {
+            *modbus_bit = *plc_bit != 0x00;
+        }
+    }
+
+    pub fn sync_from_modbus(&mut self, ctx: &rmodbus::server::context::ModbusContext) {
+        let mem_bits_mut = unsafe { ext::mem_bits::all_mut() };
+        for (plc_bit, modbus_bit) in mem_bits_mut.into_iter().zip(ctx.coils.iter()) {
+            *plc_bit = if *modbus_bit { 0xff } else { 0x00 };
+        }
+        let mem_words_mut = unsafe { ext::mem_words::all_mut() };
+        for (plc_word, modbus_word) in mem_words_mut.into_iter().zip(ctx.holdings.iter()) {
+            *plc_word = *modbus_word;
+        }
+    }
 }
