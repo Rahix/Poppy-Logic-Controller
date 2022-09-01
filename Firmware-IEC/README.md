@@ -91,39 +91,14 @@ $ pymodbus.console serial --port /dev/ttyACM0
     "bits": [
         false,
         false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        true,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        true,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false
-    ]
-}
+        ...
 ```
+
+### Modbus Monitor GUI Example
+To demonstrate the Modbus communication, I added a small GUI example:
+[`modbus_monitor.py`](./modbus_monitor.py)
+
+![Image of the GUI](../Docs/img/poppy-monitor.png)
 
 [matiec]: https://github.com/beremiz/matiec
 [main.st]: src/main.st
