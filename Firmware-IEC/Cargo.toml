@@ -25,12 +25,7 @@ shared-bus = "0.2.3"
 usb-device = "0.2.9"
 usbd-serial = "0.1.1"
 heapless = "0.7.16"
-
-[dependencies.rmodbus]
-git = "https://github.com/Rahix/rmodbus"
-rev = "1ec93352c27af37b82e2c7a414a66899951dd023"
-default-features = false
-features = ["heapless"]
+rmodbus = { version = "0.6.4", features = ["heapless"], default-features = false }
 
 [profile.dev]
 codegen-units = 1
