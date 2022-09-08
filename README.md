@@ -22,6 +22,8 @@ Logic Controller**][poppy-blog]
   applications.
 - 16 DI (digital inputs) in a **Sinking Input** configuration.
 - 16 DO (digital outputs) in a **Sinking Output** configuration.
+- Firmware stubs in [Rust][fw-rust], [MicroPython][fw-mp], and [IEC 61131-3
+  _Structured Text_][fw-iec].
 
 <small>Learn more about sinking/sourcing I/O [here][realpars-input] and
 [here][realpars-output] or from [my blog-post about this
@@ -73,9 +75,9 @@ started.  Or, if you have a background in automation, you can program the Poppy
 Logic Controller in _ST_ (_Structured Text_) using the IEC 61131-3 firmware.
 Check the READMEs for more info on that:
 
-- [Firmware-Rust](./Firmware-Rust/)
-- [Firmware-MicroPython](./Firmware-MicroPython/)
-- [Firmware-IEC](./Firmware-IEC/)
+- [Firmware-Rust][fw-rust]
+- [Firmware-MicroPython][fw-mp]
+- [Firmware-IEC][fw-iec]
 
 #### Not using the Pico
 If you need a different microcontroller, you can drop the Raspberry Pi Pico and
@@ -98,3 +100,6 @@ anything, feel free to contact me to get it sorted out!
 [poppy-changelog]: ./Hardware/PoppyIO/CHANGELOG.md
 [realpars-input]: https://realpars.com/sinking-and-sourcing/
 [realpars-output]: https://realpars.com/sinking-output/
+[fw-rust]: ./Firmware-Rust/
+[fw-mp]: ./Firmware-MicroPython/
+[fw-iec]: ./Firmware-IEC/
