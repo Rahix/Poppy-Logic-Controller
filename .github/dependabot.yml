@@ -2,13 +2,19 @@ version: 2
 updates:
   - package-ecosystem: "github-actions"
     directory: "/"
+    commit-message:
+      prefix: "ci"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
   - package-ecosystem: "cargo"
     directory: "Firmware-Rust/"
+    commit-message:
+      prefix: "fw: rust"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
   - package-ecosystem: "cargo"
     directory: "Firmware-IEC/"
+    commit-message:
+      prefix: "fw: iec"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
