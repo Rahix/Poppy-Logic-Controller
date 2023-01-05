@@ -1,0 +1,47 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+      - wip
+  pull_request:
+
+jobs:
+  build-rust:
+    name: Build Rust Firmware
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions-rust-lang/setup-rust-toolchain@v1
+        with:
+          target: thumbv6m-none-eabi
+      - run: cd Firmware-Rust && cargo build
+
+  build-iec:
+    name: Build IEC Firmware
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions-rust-lang/setup-rust-toolchain@v1
+        with:
+          target: thumbv6m-none-eabi
+      - run: sudo apt-get install -y gcc-arm-none-eabi
+      - run: cd Firmware-IEC && cargo build
+
+  rustfmt:
+    name: Rust Formatting
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions-rust-lang/setup-rust-toolchain@v1
+        with:
+          components: rustfmt
+      - name: Rustfmt for Rust Firmware
+        uses: actions-rust-lang/rustfmt@v1
+        with:
+          manifest-path: Firmware-Rust/Cargo.toml
+      - name: Rustfmt for IEC Firmware
+        uses: actions-rust-lang/rustfmt@v1
+        with:
+          manifest-path: Firmware-IEC/Cargo.toml
