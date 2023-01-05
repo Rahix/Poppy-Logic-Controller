@@ -10,7 +10,7 @@ test = false
 bench = false
 
 [dependencies]
-cortex-m = "0.7.3"
+cortex-m = "0.7.7"
 cortex-m-rt = "0.7.0"
 embedded-hal = { version = "0.2.6", features=["unproven"] }
 embedded-time = "0.12.0"
