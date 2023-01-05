@@ -19,7 +19,7 @@ embedded-time = "0.12.0"
 panic-rtt-target = { version = "0.1.2", features = ["cortex-m"] }
 paste = "1.0.11"
 port-expander = "0.3.0"
-rp-pico = "0.2.0"
+rp-pico = "0.6.0"
 rtt-target = { version = "0.3.1", features = ["cortex-m"] }
 shared-bus = "0.2.5"
 usb-device = "0.2.9"
