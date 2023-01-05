@@ -7,8 +7,8 @@ use rp_pico::hal;
 use rp_pico::hal::pac;
 
 use embedded_hal::digital::v2::OutputPin as _;
-use panic_halt as _;
 use hal::Clock as _;
+use panic_halt as _;
 
 #[cortex_m_rt::entry]
 fn main() -> ! {

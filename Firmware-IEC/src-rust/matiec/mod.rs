@@ -97,11 +97,17 @@ impl IecConfiguration {
         }
         // also synchronize inputs and outputs to discretes
         let inputs_mut = unsafe { ext::inputs::all_mut() };
-        for (plc_bit, modbus_bit) in inputs_mut.into_iter().zip(ctx.discretes.iter_mut().take(16)) {
+        for (plc_bit, modbus_bit) in inputs_mut
+            .into_iter()
+            .zip(ctx.discretes.iter_mut().take(16))
+        {
             *modbus_bit = *plc_bit != 0x00;
         }
         let outputs_mut = unsafe { ext::outputs::all_mut() };
-        for (plc_bit, modbus_bit) in outputs_mut.into_iter().zip(ctx.discretes.iter_mut().skip(16).take(16)) {
+        for (plc_bit, modbus_bit) in outputs_mut
+            .into_iter()
+            .zip(ctx.discretes.iter_mut().skip(16).take(16))
+        {
             *modbus_bit = *plc_bit != 0x00;
         }
     }
