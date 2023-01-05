@@ -60,4 +60,4 @@ opt-level = 0
 overflow-checks = false
 
 [build-dependencies]
-cc = "1.0.73"
+cc = "1.0.78"
