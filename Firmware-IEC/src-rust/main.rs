@@ -12,7 +12,6 @@ use rp_pico::hal::pac;
 use rmodbus::server::context::ModbusContext;
 
 use embedded_hal::digital::v2::OutputPin as _;
-use hal::Clock as _;
 
 mod matiec;
 
@@ -23,7 +22,7 @@ fn main() -> ! {
     rprintln!("Hello Poppy Logic!");
 
     let mut pac = pac::Peripherals::take().unwrap();
-    let core = pac::CorePeripherals::take().unwrap();
+    let _core = pac::CorePeripherals::take().unwrap();
 
     let mut watchdog = hal::watchdog::Watchdog::new(pac.WATCHDOG);
     let clocks = hal::clocks::init_clocks_and_plls(
@@ -38,7 +37,6 @@ fn main() -> ! {
     .ok()
     .unwrap();
 
-    let mut delay = cortex_m::delay::Delay::new(core.SYST, clocks.system_clock.freq().integer());
     let timer = hal::Timer::new(pac.TIMER, &mut pac.RESETS);
 
     let sio = hal::sio::Sio::new(pac.SIO);
