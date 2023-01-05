@@ -17,7 +17,7 @@ embedded-time = "0.12.0"
 panic-halt = "0.2.0"
 port-expander = "0.3.0"
 rp-pico = "0.2.0"
-shared-bus = "0.2.3"
+shared-bus = "0.2.5"
 
 [profile.dev]
 codegen-units = 1
