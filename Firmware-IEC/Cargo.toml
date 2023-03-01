@@ -25,7 +25,7 @@ shared-bus = "0.2.5"
 usb-device = "0.2.9"
 usbd-serial = "0.1.1"
 heapless = "0.7.16"
-rmodbus = { version = "0.6.4", features = ["heapless"], default-features = false }
+rmodbus = { version = "0.7.2", features = ["heapless"], default-features = false }
 
 [profile.dev]
 codegen-units = 1
