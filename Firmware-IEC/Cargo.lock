@@ -453,9 +453,9 @@ dependencies = [
 
 [[package]]
 name = "rmodbus"
-version = "0.6.4"
+version = "0.7.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c0dd0f3c07109f3590c890c67b2632008a4877919599e1465f2fcc1e6edaa60e"
+checksum = "f3490656ba7538bfe1edfdb34525407aeb58a1e5802302f780fc68067032d608"
 dependencies = [
  "heapless",
  "ieee754",
