@@ -22,13 +22,13 @@ macro_rules! io_tags_def {
         paste::paste! {
             $(
                 #[export_name = concat!("__", stringify!($IO))]
-                static mut [<$IO _ADDR>]: *const $Ty = unsafe { &$IO };
+                static mut [<$IO _ADDR>]: *const $Ty = unsafe { ::core::ptr::addr_of!($IO) };
                 pub static mut $IO: $Ty = 0;
             )*
 
             pub unsafe fn all_mut<'a>() -> [&'a mut $Ty; $N] {
                 [
-                    $(&mut $IO,)*
+                    $(&mut *::core::ptr::addr_of_mut!($IO),)*
                 ]
             }
         }
