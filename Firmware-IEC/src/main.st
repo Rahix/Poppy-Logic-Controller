@@ -20,6 +20,7 @@ PROGRAM MAIN
     VAR (* Outputs *)
         xIndicatorOrange    AT %QX08:   BOOL := FALSE;
         xIndicatorGreen     AT %QX09:   BOOL := FALSE;
+        xIndicatorActive    AT %QX15:   BOOL;
 
         xMotor              AT %QX00:   BOOL := FALSE;
     END_VAR
@@ -49,6 +50,7 @@ PROGRAM MAIN
 
     xIndicatorGreen := xRunning;
     xIndicatorOrange := xWaiting AND fbBlink.Q;
+    xIndicatorActive := fbBlink.Q;
 END_PROGRAM
 
 (*
